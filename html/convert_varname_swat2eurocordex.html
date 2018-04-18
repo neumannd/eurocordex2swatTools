@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert SWAT2012 variable name to EURO-CORDEX variable name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for convert_varname_swat2eurocordex"><tr><td>convert_varname_swat2eurocordex</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert SWAT2012 variable name to EURO-CORDEX variable name</h2>
+
+<h3>Description</h3>
+
+<p>NOTE: It might return one or MORE values per input value. Please have a look at the examples for details.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+convert_varname_swat2eurocordex(varname, stop_on_error = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>varname</code></td>
+<td>
+<p>character or character-array: one or more SWAT2012 variable names</p>
+</td></tr>
+<tr valign="top"><td><code>stop_on_error</code></td>
+<td>
+<p>boolean: stop, when one or more entries of varname are not convertible</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>character or character-array: EURO-CORDEX variable names
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+ # PLEASE NOT THE LAST EXAMPLE!
+
+ var &lt;- 'pcp'
+ var_ec &lt;- convert_varname_swat2eurocordex(var)
+ print(var_ec)
+ # [1] "pr"
+ 
+ var &lt;- 'slr'
+ var_ec &lt;- convert_varname_swat2eurocordex(var)
+ print(var_ec)
+ # [1] "rsds"
+ 
+ var &lt;- 'tmp'
+ var_ec &lt;- convert_varname_swat2eurocordex(var)
+ print(var_ec)
+ # [1] "tasmin" "tasmax"
+ 
+ 
+</pre>
+
+
+</body></html>

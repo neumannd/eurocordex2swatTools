@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: read actual data from netCDF files</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for read_eurocordex_files"><tr><td>read_eurocordex_files</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>read actual data from netCDF files</h2>
+
+<h3>Description</h3>
+
+<p>read actual data from netCDF files
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read_eurocordex_files(dir, fImport, idxStations, varname)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dir</code></td>
+<td>
+<p>string: file direcotory</p>
+</td></tr>
+<tr valign="top"><td><code>fImport</code></td>
+<td>
+<p>data.frame: containing columns filename, read_idx_start, and read_idx_count</p>
+</td></tr>
+<tr valign="top"><td><code>idxStations</code></td>
+<td>
+<p>data.frame: containing columns station_name, idx_lon, and idx_lat</p>
+</td></tr>
+<tr valign="top"><td><code>varname</code></td>
+<td>
+<p>variable name to import</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame with first column &quot;time&quot; and last column &quot;time_posix&quot;. further columns in between are denoted according to idxStations$station_name; each row contains data of one time step
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# Used by `read_eurocordex_data`. Please look into that function's code for a usage example.
+
+
+</pre>
+
+
+</body></html>

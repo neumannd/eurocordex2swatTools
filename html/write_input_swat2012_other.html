@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Write out default SWAT 2012 meteorology input file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for write_input_swat2012_other"><tr><td>write_input_swat2012_other</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Write out default SWAT 2012 meteorology input file</h2>
+
+<h3>Description</h3>
+
+<p>Write out default SWAT 2012 meteorology input file
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+write_input_swat2012_other(file, data, station_names, type,
+  col_time_name = "time_posix")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>string: directory + file name of output file</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame: contains a column with time stamp and &gt;=1 columns with data; time column needs to be of type POSIXct</p>
+</td></tr>
+<tr valign="top"><td><code>station_names</code></td>
+<td>
+<p>character-array: contains names of the stations to write out; have to be equal to column names of data</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>character: file type ('wnd', 'slr', 'hmd'); only used in the header row</p>
+</td></tr>
+<tr valign="top"><td><code>col_time_name</code></td>
+<td>
+<p>character, optional: name of the time stamp column, default = 'time_posix'</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# see example in README
+
+explanation of the following command:
+  - make time column:
+      format(data[[time_name]],"%Y%m%d")
+  - format the individual values of the data column:
+      formatC(as.matrix(data[station_names]), format='f', width=8, digits=3, flag='0')
+     We need 'as.matrix' because my_data is a data frame. formatC cannot be applied to a 2d data frame.
+  - append all formatted data values in one row:
+      apply(formatC(...), 1, paste0, collapse = '')
+</pre>
+
+
+</body></html>

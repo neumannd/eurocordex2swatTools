@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Look for files in a specific directory and return a list of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_eurocordex_filelist"><tr><td>get_eurocordex_filelist</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Look for files in a specific directory and return a list of files with start and end dates</h2>
+
+<h3>Description</h3>
+
+<p>Look for files in a specific directory and return a list of files with start and end dates
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_eurocordex_filelist(dir, file)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dir</code></td>
+<td>
+<p>string: directory name</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>string: file name part we look for 'dir/file_YYYYDDMM-YYYYDDMM.nc' files</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame with three columns 'filename' (without path), 'time_start' and 'time_stop' (format: YYYYMMDD)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ 
+# Used by `read_eurocordex_data`. Please look into that function's code for a usage example.
+</pre>
+
+
+</body></html>

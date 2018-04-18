@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get locations of stations on the model grid defined in the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_eurocordex_stations_indices"><tr><td>get_eurocordex_stations_indices</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get locations of stations on the model grid defined in the netCDF file 'file'</h2>
+
+<h3>Description</h3>
+
+<p>We have a data.frame with station information and want to know, in which model grid cell boxes these stations are located.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_eurocordex_stations_indices(file, stations, var_lon = "lon",
+  var_lat = "lat", col_lon = "lon", col_lat = "lat")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>path (directory and name) of a netCDF file, in which den model grid is defined</p>
+</td></tr>
+<tr valign="top"><td><code>stations</code></td>
+<td>
+<p>data.frame containing the stations information as columns station_name, lon, and lat</p>
+</td></tr>
+<tr valign="top"><td><code>var_lon</code></td>
+<td>
+<p>character, optional: name of the longitude variable in file</p>
+</td></tr>
+<tr valign="top"><td><code>var_lat</code></td>
+<td>
+<p>character, optional: name of the latitude variable in file</p>
+</td></tr>
+<tr valign="top"><td><code>col_lon</code></td>
+<td>
+<p>character, optional: name of the longitude column in stations</p>
+</td></tr>
+<tr valign="top"><td><code>col_lat</code></td>
+<td>
+<p>character, optional: name of the latitude column in stations</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame containing the stations information as columns station_name, idx_lon, and idx_lat; if the stations are not on the model grid, idx_lon and idx_lat of the nearest grid cell are provided
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+## EXAMPLE 1:
+# construct data:
+stations &lt;- data.frame(c('abc', 'def', 'ghi', 'jkl'), 
+                       c(10.31, 11.12, 9.2, 9.31), 
+                       c(55.19, 54.77, 55.02, 53.2), 
+                       c(44, 1, 5, 107), 
+                       stringsAsFactors = FALSE)
+names(stations) &lt;- c('station_name', 'lon', 'lat', 'elev')
+
+# we need to have some file with EURO-CORDEX data somewhere.
+file = './tasmin_EUR-11_ICHEC-EC-EARTH_rcp26_r12i1p1_CLMcom-CCLM4-8-17_v1_day_20060101-20101231.nc'
+
+# call the function
+idx_stations &lt;- get_eurocordex_stations_indices(file, stations)
+
+print(idx_stations)
+#  station_name idx_lon idx_lat
+# 1          abc     219     256
+# 2          def     223     252
+# 3          ghi     213     255
+# 4          jkl     212     239
+
+
+## EXAMPLE 2:
+## If we have different column names in the stations data.frame
+# construct data:
+stations &lt;- data.frame(c('abc', 'def', 'ghi', 'jkl'), 
+                       c(10.31, 11.12, 9.2, 9.31), 
+                       c(55.19, 54.77, 55.02, 53.2), 
+                       c(44, 1, 5, 107), 
+                       stringsAsFactors = FALSE)
+names(stations) &lt;- c('station_name', 'long', 'lati', 'elev')
+
+# we need to have some file with EURO-CORDEX data somewhere.
+file = './tasmin_EUR-11_ICHEC-EC-EARTH_rcp26_r12i1p1_CLMcom-CCLM4-8-17_v1_day_20060101-20101231.nc'
+
+# call the function
+idx_stations &lt;- get_eurocordex_stations_indices(file, stations, col_lon = 'long', col_lat = 'lati')
+
+print(idx_stations)
+#  station_name idx_lon idx_lat
+# 1          abc     219     256
+# 2          def     223     252
+# 3          ghi     213     255
+# 4          jkl     212     239
+
+
+# Used by `read_eurocordex_data`. Please look into that function's code for further usage examples.
+
+
+</pre>
+
+
+</body></html>

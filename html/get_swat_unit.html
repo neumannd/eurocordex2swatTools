@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get unit to one SWAT2012 variable name</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_swat_unit"><tr><td>get_swat_unit</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get unit to one SWAT2012 variable name</h2>
+
+<h3>Description</h3>
+
+<p>Get the unit of one SWAT2012 meteorological input parameter. Only five parameters are currently supported: wnd, hmd, slr, pcp, and tmp.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_swat_unit(varname, stop_on_error = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>varname</code></td>
+<td>
+<p>character or character-array: one or more SWAT2012 variable names</p>
+</td></tr>
+<tr valign="top"><td><code>stop_on_error</code></td>
+<td>
+<p>boolean: stop, when one or more entries of varname are not convertible</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>character or character-array: SWAT2012 units
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+ var &lt;- 'pcp'
+ unit &lt;- get_swat_unit(var)
+ print(unit)
+ # mm/d
+
+ var &lt;- 'slr'
+ unit &lt;- get_swat_unit(var)
+ print(unit)
+ # MJ/m2/d
+ 
+ 
+</pre>
+
+
+</body></html>

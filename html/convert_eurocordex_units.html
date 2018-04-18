@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert units of columns of a data.frame with the udunits2...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for convert_eurocordex_units"><tr><td>convert_eurocordex_units</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert units of columns of a data.frame with the udunits2 package</h2>
+
+<h3>Description</h3>
+
+<p>All columns of 'data', which are listed in 'station_names', are converted from 'unit_in' to 'unit_out' with the help of the udunits2 package.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+convert_eurocordex_units(data, station_names, unit_in, unit_out)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame: contains a column with data; columns indicated by 'station_names' are converted from 'unit_in' to 'unit_out'</p>
+</td></tr>
+<tr valign="top"><td><code>station_names</code></td>
+<td>
+<p>character-array: contains names of the stations (columns of data), which units should be converted</p>
+</td></tr>
+<tr valign="top"><td><code>unit_in</code></td>
+<td>
+<p>character: unit of the input data (FROM which should be converted)</p>
+</td></tr>
+<tr valign="top"><td><code>unit_out</code></td>
+<td>
+<p>character: unit of the output data (TO which should be converted)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.from: same format as the
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# see example in README
+
+
+</pre>
+
+
+</body></html>

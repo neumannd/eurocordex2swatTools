@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: search for EURO-CORDEX netCDF files, get the data from the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for read_eurocordex_data"><tr><td>read_eurocordex_data</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>search for EURO-CORDEX netCDF files, get the data from the netCDF files and put them into a data.frame</h2>
+
+<h3>Description</h3>
+
+<p>search for EURO-CORDEX netCDF files, get the data from the netCDF files and put them into a data.frame
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read_eurocordex_data(dir, variable, domain, driver, experiment, ensemble,
+  institute, model, downscaling_realisation, time_frequency, time, stations)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dir</code></td>
+<td>
+<p>string: file direcotory</p>
+</td></tr>
+<tr valign="top"><td><code>variable</code></td>
+<td>
+<p>string: model variable, see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>domain</code></td>
+<td>
+<p>string: model domain, see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>driver</code></td>
+<td>
+<p>string: driving global model, see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>experiment</code></td>
+<td>
+<p>string: experiment type (historical, rcp2.6, rcp4.5, rcp8.5), see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>ensemble</code></td>
+<td>
+<p>string: ensemble (e.g. r12i1p1), see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>institute</code></td>
+<td>
+<p>string: institution who did the model run, see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>model</code></td>
+<td>
+<p>string: used RCM (regional climate model), see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>downscaling_realisation</code></td>
+<td>
+<p>string: version of the downscaling realisation (most often 'v1'), see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>time_frequency</code></td>
+<td>
+<p>string: time frequency of model output (e.g. 'day'), see EURO-CORDEX Doc</p>
+</td></tr>
+<tr valign="top"><td><code>stations</code></td>
+<td>
+<p>data.frame of three columns station_name, lon, and lat</p>
+</td></tr>
+<tr valign="top"><td><code>time_lim</code></td>
+<td>
+<p>string, numeric or integer: array of length 2 containing start and end time to read in format 'YYYYMMDD' (as character, numeric or integer)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame with first column &quot;time&quot; and last column &quot;time_posix&quot;. further columns in between are denoted according to idxStations$station_name; each row contains data of one time step
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# define directory that contains the model data
+dir &lt;- '/my/data/directory/for/EUROCORDEX/data'
+
+# define EURO-CORDEX model run details
+variable &lt;- 'sfcWind'
+domain &lt;- 'EUR-11'
+driver &lt;- 'ICHEC-EC-EARTH'
+experiment &lt;- 'rcp85'
+ensemble &lt;- 'r12i1p1'
+institute &lt;- 'CLMcom'
+model &lt;- 'CCLM4-8-17'
+downscaling_realisation &lt;- 'v1'
+time_frequency &lt;- 'day'
+time &lt;- c('20110201', '20170301')
+
+# define stations
+stations &lt;- data.frame(c('abc', 'def', 'ghi', 'jkl'), c(10.31, 11.12, 9.2, 9.31), c(55.19, 54.77, 55.02, 53.2), c(44, 1, 5, 107), stringsAsFactors = FALSE)
+names(stations) &lt;- c('station_name', 'lon', 'lat', 'elev')
+
+# read in the data
+my_data &lt;- read_eurocordex_data(dir, variable, domain, driver, experiment, ensemble, institute, model, downscaling_realisation, time_frequency, time, stations)
+
+
+</pre>
+
+
+</body></html>

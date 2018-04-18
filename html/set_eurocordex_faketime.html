@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Replace time data in a data.frame by new time</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for set_eurocordex_faketime"><tr><td>set_eurocordex_faketime</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Replace time data in a data.frame by new time</h2>
+
+<h3>Description</h3>
+
+<p>Replace time data in a data.frame by new time
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+set_eurocordex_faketime(data, fakeTime, col_time = "time",
+  col_time_posix = "time_posix", fakeLength = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>data.frame: contains data and time columns ('time' and 'time_posix'); time_posix column needs to be of type POSIXct</p>
+</td></tr>
+<tr valign="top"><td><code>fakeTime</code></td>
+<td>
+<p>POSIXct-array: contains new times to insert</p>
+</td></tr>
+<tr valign="top"><td><code>col_time</code></td>
+<td>
+<p>character, optional: set alternative name of column 'time'</p>
+</td></tr>
+<tr valign="top"><td><code>col_time_posix</code></td>
+<td>
+<p>character, optional: set alternative name of column 'time_posix'</p>
+</td></tr>
+<tr valign="top"><td><code>fakeLength</code></td>
+<td>
+<p>boolean, optional: if data has less entries than the length of fake time =&gt; extend data by repeating entries</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame: with 'corrected' time axies
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# see example in README
+
+</pre>
+
+
+</body></html>

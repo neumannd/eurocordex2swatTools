@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: go through file list and look from which files data should be...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for filter_eurocordex_filelist"><tr><td>filter_eurocordex_filelist</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>go through file list and look from which files data should be read</h2>
+
+<h3>Description</h3>
+
+<p>go through file list and look from which files data should be read
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+filter_eurocordex_filelist(fList, num_time)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fList</code></td>
+<td>
+<p>data.frame containing columns filename (char), time_start (int/numeric), and time_stop (int/numeric).</p>
+</td></tr>
+<tr valign="top"><td><code>num_time</code></td>
+<td>
+<p>2-element array of numeric or integer</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.frame containing a filtered version of fList; additional columns are added, which indicate which records have to be read from the netCDF files
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+# Used by `read_eurocordex_data`. Please look into that function's code for a usage example.
+
+
+</pre>
+
+
+</body></html>
