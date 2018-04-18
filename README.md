@@ -1,5 +1,3 @@
-**NOTE: The development of the R package was discontinued at gitlab.io-warnemuende.de and moved to github (https://github.com/neumannd/eurocordex2swatTools)**
-
 # Introduction
 
 We want to read in EURO-CORDEX Data and write out input files for SWAT
