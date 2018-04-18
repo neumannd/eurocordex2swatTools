@@ -1,6 +1,11 @@
 # Introduction
 
-We want to read in EURO-CORDEX Data and write out input files for SWAT
+We want to read in EURO-CORDEX Data and write out input files for SWAT.
+
+
+# Acknowledgements
+
+This package was created within the project PhosWaM. PhosWaM is funded within the ReWaM funding initiative by the German Federal Ministry for Education and Research (BMBF) under project number FKZ 033W042A.
 
 
 # Important directories
