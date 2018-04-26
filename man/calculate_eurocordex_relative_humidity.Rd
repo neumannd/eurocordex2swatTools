@@ -40,6 +40,20 @@ it can be approximately calculated from the specific humidity, temperature, and
 pressure. This is done by this funciton. It uses `read_eurocordex_data` to
 obtain the data of the three needed variables.
 }
+\details{
+The relative humidity was missing in some archived simulations. In these cases, 
+it can be approximately calculated from the specific humidity, temperature, and 
+pressure. This is done by this funciton. It uses `read_eurocordex_data` to
+obtain the data of the three needed variables.
+
+The relative humidity is calculated given in the equation below. The '=' is
+actually an 'approximately'.
+
+\deqn{hurs = 0.263 Pa^{-1} huss * ps * exp(-17.67 * (tas - 273.16 K)/(tas - 29.65 K))}
+
+with specific humidity (huss, dimensionless), pressure (ps in Pa), and 
+temperature (tas in K).
+}
 \examples{
 
 # define directory that contains the model data
