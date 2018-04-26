@@ -7,7 +7,9 @@ Please see the functions' help pages for details.
 
 # Acknowledgements
 
-This package was created within the project PhosWaM ('Phosphorus from source to sea - Integrated phosphorus and water resources management for sustainable water protection'). PhosWaM is funded within the ReWaM funding initiative by the German Federal Ministry for Education and Research (BMBF) under project number FKZ 033W042A. The programing work was also performed within the scope of the Leibniz ScienceCampus Phosphorus Research Rostock.
+This package was created within the project [PhosWaM](https://www.io-warnemuende.de/projekt/142/phoswam.html) ('Phosphorus from source to sea - Integrated phosphorus and water resources management for sustainable water protection'). PhosWaM is funded within the ReWaM funding initiative by the German Federal Ministry for Education and Research (BMBF) under project number FKZ 033W042A.
+
+The programing work was also performed within the scope of the [Leibniz ScienceCampus Phosphorus Research Rostock](https://wissenschaftscampus-rostock.de/).
 
 
 # Usage example
