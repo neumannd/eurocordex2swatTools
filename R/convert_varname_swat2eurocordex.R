@@ -1,5 +1,9 @@
 #' Convert SWAT2012 variable name to EURO-CORDEX variable name
 #' 
+#' Convert SWAT2012 variable name to EURO-CORDEX variable name
+#' 
+#' Converts SWAT2012 variable name to EURO-CORDEX variable name.
+#' 
 #' NOTE: It might return one or MORE values per input value. Please have a look at the examples for details.
 #'
 #' @param varname character or character-array: one or more SWAT2012 variable names

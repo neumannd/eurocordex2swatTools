@@ -15,6 +15,11 @@ convert_varname_swat2eurocordex(varname, stop_on_error = TRUE)
 character or character-array: EURO-CORDEX variable names
 }
 \description{
+Convert SWAT2012 variable name to EURO-CORDEX variable name
+}
+\details{
+Converts SWAT2012 variable name to EURO-CORDEX variable name.
+
 NOTE: It might return one or MORE values per input value. Please have a look at the examples for details.
 }
 \examples{

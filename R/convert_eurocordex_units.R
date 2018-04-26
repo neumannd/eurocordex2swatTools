@@ -1,7 +1,8 @@
 library('udunits2')
 #' Convert units of columns of a data.frame with the udunits2 package
 #' 
-#' All columns of 'data', which are listed in 'station_names', are converted from 'unit_in' to 'unit_out' with the help of the udunits2 package.
+#' All columns of 'data', which are listed in 'station_names', are converted 
+#' from 'unit_in' to 'unit_out' with the help of the udunits2 package.
 #'
 #' @param data data.frame: contains a column with data; columns indicated by 'station_names' are converted from 'unit_in' to 'unit_out'
 #' @param station_names character-array: contains names of the stations (columns of data), which units should be converted

@@ -19,7 +19,8 @@ convert_eurocordex_units(data, station_names, unit_in, unit_out)
 data.from: same format as the
 }
 \description{
-All columns of 'data', which are listed in 'station_names', are converted from 'unit_in' to 'unit_out' with the help of the udunits2 package.
+All columns of 'data', which are listed in 'station_names', are converted 
+from 'unit_in' to 'unit_out' with the help of the udunits2 package.
 }
 \examples{
 
